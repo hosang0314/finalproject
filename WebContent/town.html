@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+.box1 {
+	float: left;
+	width: 200px;
+	height: 250px;
+}
+
+.box2 {
+	display: inline-block;
+	width: 250px;
+	height: 250px;
+	margin-left: 10px;
+}
+</style>
+<body>
+<div id="select" style="wdith:220px">
+	<form method="get" action="/final/town.do">
+		<div class="box1" style="display:block">
+			<select name="area1" size="10" style="width: 100%"
+				multiple="multiple" required>
+				<option value="1">대단하구</option>
+				<option value="2">상당하구</option>
+				<option value="3">서초구</option>
+				<option value="4">강남구</option>
+				<option value="5">성동구</option>
+				<option value="6">중구</option>
+				<option value="7">영등포구</option>
+			</select>
+		</div>
+		<div style="display:block">
+			<div class="box1" >
+				<select name="area2" size="10" style="width: 100%"
+					multiple="multiple">
+					<option value="1">미세먼지농도</option>
+					<option value="2">녹지조성도</option>
+					<!-- <option value="3">가로수 수</option> -->
+				</select>
+			</div>
+			<div class="box2">
+				가중치:<select name="su_w1">
+					<option value="10">상</option>
+					<option value="7" selected>중</option>
+					<option value="3">하</option>
+				</select>
+				<br>가중치:<select name="su_w2">
+					<option value="10">상</option>
+					<option value="7" selected>중</option>
+					<option value="3">하</option>
+				</select>
+				<!-- <br>가중치:<select name="su_w3">
+					<option value="10">상</option>
+					<option value="7" selected>중</option>
+					<option value="3">하</option>
+				</select> -->
+			</div>
+		</div>
+		<div>
+			<div class="box1">
+				<select name="area3" size="10"
+					style="width: 100%; display: block" multiple="multiple">
+					<option value="1">체육시설</option>
+					<option value="2">도서관 수</option>
+					<option value="3">아동 관련 시실 수</option>
+					<option value="4">어린이집 평가점수</option>
+				</select>
+			</div>
+			<div class="box2">
+			     가중치:<select name="ed_w1">
+			    	<option value="10">상</option>
+					<option value="7" selected>중</option>
+					<option value="3">하</option>
+				</select>
+				<br>가중치:<select name="ed_w2">
+					<option value="10">상</option>
+					<option value="7" selected>중</option>
+					<option value="3">하</option>
+				</select>
+				<br>가중치:<select name="ed_w3">
+					<option value="10">상</option>
+					<option value="7" selected>중</option>
+					<option value="3">하</option>
+				</select>
+				<br>가중치:<select name="ed_w4">
+					<option value="10">상</option>
+					<option value="7" selected>중</option>
+					<option value="3">하</option>
+				</select>
+				<!-- 가중치<input type="text" id="ed_w1"> <br>가중치<input
+					type="text" id="ed_w2"> <br>가중치<input type="text"
+					id="ed_w3"> <br>가중치<input type="text" id="ed_w4"> -->
+			</div>
+		</div>
+		<div>
+			<div class="box1">
+				<select name="area4" size="10" style="width: 100%"
+					multiple="multiple">
+					<option value="1">교통사고 수</option>
+					<option value="2">유흥시설 수</option>
+					<option value="3">혐오시설 수</option>
+				</select>
+			</div>
+			<div class="box2">
+				가중치:<select name="ha_w1">
+					<option value="10">상</option>
+					<option value="7" selected>중</option>
+					<option value="3">하</option>
+				</select>
+			    <br>가중치:<select name="ha_w2">
+			   		<option value="10">상</option>
+					<option value="7" selected>중</option>
+					<option value="3">하</option>
+				</select>
+				<br>가중치:<select name="ha_w3">
+					<option value="10">상</option>
+					<option value="7" selected>중</option>
+					<option value="3">하</option>
+				</select>
+			</div>
+		</div>
+
+		<div>
+			<div class="box1">
+				<select name="area5" size="10" style="width: 100%"
+					multiple="multiple">
+					<option value="1">납치</option>
+					<option value="2">폭행</option>
+					<option value="3">살인</option>
+				</select>
+			</div>
+			<div class="box2">
+				가중치:<select name="cr_w1">
+					<option value="10">상</option>
+					<option value="7" selected>중</option>
+					<option value="3">하</option>
+				</select>
+				<br>가중치:<select name="cr_w2">
+					<option value="10">상</option>
+					<option value="7" selected>중</option>
+					<option value="3">하</option>
+				</select>
+				<br>가중치:<select name="cr_w3">
+					<option value="10">상</option>
+					<option value="7" selected>중</option>
+					<option value="3">하</option>
+				</select>
+			</div>
+		</div>
+		<input type="submit" value="쿼리넘기기">
+	</form>
+</div>
+</body>
+</html>
