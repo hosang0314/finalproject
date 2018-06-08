@@ -36,4 +36,7 @@
 		<!-- insert into client values (#{C_ID},#{C_PW},1) -->
 	</select>
 	
+	<select id="firstName" parameterType="String" resultType="String">
+		select c_firstname from client where c_id like '%'||#{c_id}||'%'
+	</select>
 </mapper>

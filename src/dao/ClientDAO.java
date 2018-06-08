@@ -35,7 +35,7 @@ public class ClientDAO {
 	public List<ClientVO> selectAll() {
 		List<ClientVO> list = null;
 		try {
-			System.out.println(1);
+			//System.out.println(1);
 			String statement = "resource.TownMapper.selectAll";
 			list = session.selectList(statement);
 		} catch (Exception e) {
@@ -85,4 +85,19 @@ public class ClientDAO {
 		} 
 		return result;	
 	}
+	
+	public String firstName(String email) {
+		String firstName = null;
+		try {
+			String statement = "resource.TownMapper.firstName";
+			System.out.println("email:["+email+"]");
+			firstName = session.selectOne(statement, email);
+			System.out.println("firstName : "+firstName);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return firstName;
+	
+	}
+	
 }

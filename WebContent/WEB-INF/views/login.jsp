@@ -65,7 +65,7 @@
 				</form>
 				<div class="text-center">
 					<a class="d-block small mt-3" href="/town/register.do">Register an
-						Account</a> <a class="d-block small" href="forgot-password.html">Forgot
+						Account</a> <a class="d-block small" href="/town/forgot-password.do">Forgot
 						Password?</a>
 				</div>
 			</div>
