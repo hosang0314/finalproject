@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="resource.TownMapper">
+	
+	<select id="insertEvaluation" parameterType="vo.ClientEvalVO">
+		insert into client_eval values(#{c_id},#{lo_id},#{su_dust},
+		#{su_green},#{su_hospital},#{su_population},#{su_cctv},#{ed_gym},
+		#{ed_facility_ratio},#{ed_facility_grade},#{ha_car},#{ha_bar},#{ha_crime})
+	</select>
+	
+	<select id="updateEvaluation" parameterType="vo.ClientEvalVO">
+		update table client_eval set su_dust= #{su_dust}, su_green= #{su_green},
+		su_hospital=#{su_hospital},su_population=#{su_population},su_cctv=#{su_cctv},
+		ed_gym=#{ed_gym},ed_facility_ratio=#{ed_facility_ratio},ed_facility_grade=#{ed_facility_grade},
+		ha_car=#{ha_car},ha_bar=#{ha_bar},ha_crime=#{ha_crime}
+	</select>
+	
+	<select id="selectAll" resultType="vo.ClientVO">
+		select c_id, c_pw, lo_id from client order by c_id
+	</select>
+	
+	<select id="selectOne" parameterType="java.lang.String" resultType="vo.ClientVO">
+		select c.c_id, c.c_pw, c.lo_id, l.lo_name,c.c_firstname,c.c_lastname
+		 from client c join location l on c.lo_id = l.lo_id
+		 where c.c_id = #{c_id}
+	</select>
+	
+	<select id="login" parameterType="String" resultType="String">
+		select c_pw from client where c_id like '%'||#{c_id}||'%'
+	</select>
+	
+	<select id="insertClient" parameterType="vo.ClientVO">
+		insert into client values (#{C_ID},#{C_PW},#{LO_ID},#{C_FIRSTNAME},#{C_LASTNAME}) 
+		<!-- insert into client values (#{C_ID},#{C_PW},1) -->
+	</select>
+	
+</mapper>
